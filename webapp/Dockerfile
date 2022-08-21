@@ -1,3 +1,3 @@
 FROM php:7.1-apache
-RUN docker-php-ext-install mysqli pdo pdo_mysql
-
+RUN apt update && apt install -y default-mysql-client; \
+    docker-php-ext-install pdo pdo_mysql
